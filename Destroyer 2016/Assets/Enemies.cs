@@ -3,15 +3,22 @@ using System.Collections;
 
 public class Enemies : MonoBehaviour {
     public GameObject Submarine;
+    public float minY;
+    public float maxY;
+    public float difY;
     // Use this for initialization
     void Start () {
         StartCoroutine(i());
+        maxY = -1;
+        minY = -5;
+        difY = maxY - minY;
+
     }
 
    
      IEnumerator i()
     {
-        float a = Random.value * 10;
+        float a = Random.value * 5;
         yield return new WaitForSeconds(a);
         newEnemy();
         
@@ -21,8 +28,7 @@ public class Enemies : MonoBehaviour {
 
 
 
-        float y = Random.value * -5;
-        if (y > -2.5) y = -3;
+        float y = maxY + Random.value * difY * (-1); 
 
         float x = Random.value;
         if (x > 0.5) x = 15;
