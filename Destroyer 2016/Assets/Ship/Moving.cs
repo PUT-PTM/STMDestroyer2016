@@ -3,13 +3,14 @@ using System.Collections;
 
 public class Moving : MonoBehaviour {
 
-	public float speed=2f;
-	public float range=5;
+    public float speed;
+    public float range;
 	public GameObject Missile;
 
 	// Use this for initialization
 	void Start () {
-
+        range = 20;
+        speed = 2f;
 	}
 
 	// Update is called once per frame
@@ -29,7 +30,7 @@ public class Moving : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire1")) {
             float x = transform.localPosition.x;
          
-            float  y  = (float)-0.6;
+            float  y  = (float)7.3;
            
             Instantiate (Missile,new Vector2(x, y),Quaternion.identity);
 			print ("fire");

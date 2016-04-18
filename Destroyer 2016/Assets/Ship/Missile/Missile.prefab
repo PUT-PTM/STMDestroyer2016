@@ -10,9 +10,9 @@ GameObject:
   - 4: {fileID: 460562}
   - 212: {fileID: 21202860}
   - 50: {fileID: 5075248}
-  - 61: {fileID: 6122376}
   - 114: {fileID: 11419760}
   - 114: {fileID: 11400754}
+  - 61: {fileID: 6118352}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 194036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,13 +43,13 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.15
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6122376
+--- !u!61 &6118352
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -60,9 +60,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0028095245, y: -0.0014046431}
   serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.08}
+  m_Size: {x: 0.1221413, y: 0.1642821}
 --- !u!114 &11400754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,8 +111,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c991e4875db4d1b46bb013142424794e, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 06bf9b9b111d42f43bd95e82fc8c461c, type: 3}
+  m_Color: {r: 0, g: 0.003921569, b: 0.9960785, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!1001 &100100000
