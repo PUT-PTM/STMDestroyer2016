@@ -129,43 +129,44 @@
     <File name="defines.h" path="defines.h" type="1"/>
     <File name="main.c" path="main.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device" path="" type="2"/>
-    <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_req.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_req.h" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_i2c.h" path="cmsis_lib/include/stm32f4xx_i2c.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_dma.c" path="cmsis_lib/source/stm32f4xx_dma.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_can.c" path="cmsis_lib/source/stm32f4xx_can.c" type="1"/>
+    <File name="stm32f4_discovery_lis302dl.h" path="stm32f4_discovery_lis302dl.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_cryp_aes.c" path="cmsis_lib/source/stm32f4xx_cryp_aes.c" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
-    <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_bsp.c" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_bsp.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
+    <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_bsp.c" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_bsp.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_def.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_def.h" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_dcd.c" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_dcd.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_ltdc.c" path="cmsis_lib/source/stm32f4xx_ltdc.c" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_flash.c" path="cmsis_lib/source/stm32f4xx_flash.c" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="cmsis_lib/source/stm32f4xx_flash.c" path="cmsis_lib/source/stm32f4xx_flash.c" type="1"/>
     <File name="tm/tm_stm32f4_disco/tm_stm32f4_disco.h" path="tm/tm_stm32f4_disco/tm_stm32f4_disco.h" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_dbgmcu.h" path="cmsis_lib/include/stm32f4xx_dbgmcu.h" type="1"/>
     <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_dbgmcu.c" path="cmsis_lib/source/stm32f4xx_dbgmcu.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_dbgmcu.h" path="cmsis_lib/include/stm32f4xx_dbgmcu.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_cryp_des.c" path="cmsis_lib/source/stm32f4xx_cryp_des.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_dbgmcu.c" path="cmsis_lib/source/stm32f4xx_dbgmcu.c" type="1"/>
     <File name="tm/tm_stm32f4_gpio/tm_stm32f4_gpio.h" path="tm/tm_stm32f4_gpio/tm_stm32f4_gpio.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_crc.c" path="cmsis_lib/source/stm32f4xx_crc.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_core.c" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_core.c" type="1"/>
     <File name="cmsis_lib/source/misc.c" path="cmsis_lib/source/misc.c" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_adc.c" path="cmsis_lib/source/stm32f4xx_adc.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_tim.h" path="cmsis_lib/include/stm32f4xx_tim.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_adc.c" path="cmsis_lib/source/stm32f4xx_adc.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_fmc.c" path="cmsis_lib/source/stm32f4xx_fmc.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_i2c.c" path="cmsis_lib/source/stm32f4xx_i2c.c" type="1"/>
     <File name="cmsis_lib/source" path="" type="2"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_dcd_int.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_dcd_int.h" type="1"/>
-    <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.c" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.c" type="1"/>
     <File name="tm/tm_stm32f4_delay/attributes.h" path="tm/tm_stm32f4_delay/attributes.h" type="1"/>
+    <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.c" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.c" type="1"/>
     <File name="cmsis_boot/stm32f4xx_conf.h" path="cmsis_boot/stm32f4xx_conf.h" type="1"/>
-    <File name="cmsis_boot/system_stm32f4xx.h" path="cmsis_boot/system_stm32f4xx.h" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_hid_core.c" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_hid_core.c" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_dcmi.c" path="cmsis_lib/source/stm32f4xx_dcmi.c" type="1"/>
+    <File name="cmsis_boot/system_stm32f4xx.h" path="cmsis_boot/system_stm32f4xx.h" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_bsp.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_bsp.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_dcmi.c" path="cmsis_lib/source/stm32f4xx_dcmi.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_ioreq.c" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_ioreq.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_core.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_core.h" type="1"/>
     <File name="tm/tm_stm32f4_disco" path="" type="2"/>
@@ -173,18 +174,19 @@
     <File name="cmsis_lib/include/stm32f4xx_iwdg.h" path="cmsis_lib/include/stm32f4xx_iwdg.h" type="1"/>
     <File name="tm/tm_stm32f4_disco/tm_stm32f4_disco.c" path="tm/tm_stm32f4_disco/tm_stm32f4_disco.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_dcd.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_dcd.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_sdio.c" path="cmsis_lib/source/stm32f4xx_sdio.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_sdio.h" path="cmsis_lib/include/stm32f4xx_sdio.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_sdio.c" path="cmsis_lib/source/stm32f4xx_sdio.c" type="1"/>
     <File name="tm/tm_stm32f4_delay/tm_stm32f4_delay.h" path="tm/tm_stm32f4_delay/tm_stm32f4_delay.h" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_ioreq.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_ioreq.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_cryp_tdes.c" path="cmsis_lib/source/stm32f4xx_cryp_tdes.c" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_cryp_tdes.c" path="cmsis_lib/source/stm32f4xx_cryp_tdes.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_regs.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_regs.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_hash_md5.c" path="cmsis_lib/source/stm32f4xx_hash_md5.c" type="1"/>
     <File name="tm/tm_stm32f4_gpio/tm_stm32f4_gpio.c" path="tm/tm_stm32f4_gpio/tm_stm32f4_gpio.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_dma.h" path="cmsis_lib/include/stm32f4xx_dma.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
+    <File name="stm32f4_discovery_lis302dl.c" path="stm32f4_discovery_lis302dl.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="tm/tm_stm32f4_delay/tm_stm32f4_timer_properties.c" path="tm/tm_stm32f4_delay/tm_stm32f4_timer_properties.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device" path="" type="2"/>
