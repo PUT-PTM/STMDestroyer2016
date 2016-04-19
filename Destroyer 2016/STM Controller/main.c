@@ -38,42 +38,8 @@ void LIS302DL_Init1()
         LIS302DL_InitStruct.Self_Test=LIS302DL_SELFTEST_NORMAL;
 
         LIS302DL_Init(&LIS302DL_InitStruct);
-
-        //int i;
-        //for (i=0;i<10000;i++);
 }
 
-int8_t left_joystick()
-{
-				LIS302DL_Read(&acc_x,LIS302DL_OUT_X_ADDR,1);
-				LIS302DL_Read(&acc_y,LIS302DL_OUT_Y_ADDR,1);
-				LIS302DL_Read(&acc_z,LIS302DL_OUT_Z_ADDR,1);
-
-				int8_t x = 0;
-
-				if(acc_y > 20)
-				{
-					/* Simulate left stick rotation */
-					x = 50; /* X axis */
-					//Gamepad1.LeftYAxis = 30; /* Y axis */
-				}
-				if(acc_y < -20)
-				{
-					/* Simulate left stick rotation */
-					x = -50; /* X axis */
-					//Gamepad1.LeftYAxis = 30; /* Y axis */
-				}
-				if(acc_y <= 20 && acc_y >= -20)
-				{
-					/* Simulate left stick rotation */
-					x = 0; /* X axis */
-					//Gamepad1.RightXAxis = 0; /* X axis */
-					//Gamepad1.LeftYAxis = 30; /* Y axis */
-				}
-
-				return x;
-
-}
 
 int main(void) {
 	uint8_t already = 0;
@@ -152,26 +118,26 @@ int main(void) {
 			LIS302DL_Read(&acc_z,LIS302DL_OUT_Z_ADDR,1);
 
 			/* The value on axis depends on board lean
-			 * HERE: Changing orientation of left joystick under the influence of X-axis
+			 * Here I used keyboard instead of gamepad stick.
 			* --(own)
 			* */
 			if(acc_x > 40)
 			{
-				/* Simulate left stick rotation */
-				Gamepad1.LeftXAxis = -127; /* X axis */
+				/* Simulate left arrow */
+				Keyboard.Key1 = 0x50;
 			}
 			if(acc_x < -40)
 			{
-				/* Simulate left stick rotation */
-				Gamepad1.LeftXAxis = 127; /* X axis */
+				/* Simulate right arrow */
+				Keyboard.Key1 = 0x4F;
 			}
 			if(acc_x <= 40 && acc_x >= -40)
 			{
-				/* Simulate left stick rotation */
-				Gamepad1.LeftXAxis = NULL; /* X axis */
+				/* Any key pressed */
+				Keyboard.Key1 = 0x00;
 			}
 
-			TM_USB_HIDDEVICE_GamepadSend(TM_USB_HIDDEVICE_Gamepad_Number_1, &Gamepad1);
+			TM_USB_HIDDEVICE_KeyboardSend(&Keyboard);
 
 /* Simple sketch end */
 

@@ -32,7 +32,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/MasterX/Documents/GitHub/STMDestroyer2016/STMDestroyer2016/Destroyer 2016/STM Controller/main.c" title="main.c" tooltip="C:/Users/MasterX/Documents/GitHub/STMDestroyer2016/STMDestroyer2016/Destroyer 2016/STM Controller/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/stm32f429_project/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4408" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="531" selectionTopPixel="70"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="defines.h" partName="defines.h" path="D:/Projekty/coocox/PTM_STM_pad/01-STM32F429_Coocox_CMSIS_Default_Project/defines.h" title="defines.h" tooltip="D:/Projekty/coocox/PTM_STM_pad/01-STM32F429_Coocox_CMSIS_Default_Project/defines.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/stm32f429_project/defines.h"/>
