@@ -23,6 +23,7 @@ public class Moving : MonoBehaviour {
 			transform.position = new Vector2 (range, transform.position.y);
 		}
 		float move = Input.GetAxis ("Horizontal");
+        print(move);
 		move *= Time.deltaTime;
 		move *= speed;
 		transform.Translate (move,0,0);

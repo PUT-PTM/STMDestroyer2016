@@ -19,6 +19,7 @@
 #include "stm32f4_discovery_lis302dl.h"
 #include "stm32f4xx_spi.h"
 
+//Variables which represent of STM-board position on X-axis, Y-axis and Z-axis
 int8_t acc_x, acc_y, acc_z;
 
 void LIS302DL_Init1()
@@ -38,6 +39,9 @@ void LIS302DL_Init1()
         LIS302DL_InitStruct.Self_Test=LIS302DL_SELFTEST_NORMAL;
 
         LIS302DL_Init(&LIS302DL_InitStruct);
+
+        //int i;
+        //for (i=0;i<10000;i++);
 }
 
 
@@ -52,10 +56,9 @@ int main(void) {
 	/* Initialize system */
 	SystemInit();
 
-	/* Initialize LIS302DL - acceleration sensor;
-	 * the board position determines the movement of joystick
-	 * --(own)
-	 * */
+	//Initialize LIS302DL - acceleration sensor;...
+	//... the board position determines the movement of joystick
+
 	LIS302DL_Init1();
 
 	/* Initialize leds */
@@ -77,6 +80,14 @@ int main(void) {
 	/* Set default values for gamepad structs */
 	TM_USB_HIDDEVICE_GamepadStructInit(&Gamepad1);
 	TM_USB_HIDDEVICE_GamepadStructInit(&Gamepad2);
+
+	//Variables
+	const int8_t axis_x_min = 0; //The number represents maximum deflection of left-stick on left; Default: -128 (!The value recommended for Unity game: 0 - Unity can read only not minus numbers of axis!)
+	const int8_t axis_x_max = 127; //The number represents maximum deflection of left-stick on right; Default: 127
+	const int8_t axis_x_avg = (axis_x_min + axis_x_max) / 2; //The value presented center position of left stick
+	const int8_t acc_x_min = -60; //Minimum (approximately) value reading from accelerometer for X-axis
+	const int8_t acc_x_max = 60; //Maximum (approximately) value reading from accelerometer for X-axis
+	const int8_t k = (-axis_x_min + axis_x_max) / (-acc_x_min + acc_x_max); //Thanks to this ratio, can create universal formula on value of gamepad left-axis depends on STM-board position
 
 	while (1) {
 		/* If we are connected and drivers are OK */
@@ -101,43 +112,49 @@ int main(void) {
 			} else if (!TM_DISCO_ButtonPressed() && already == 1) { /* Button on release */
 				already = 0;
 
-				//I think the command that is 5 lines below is sufficient but no...
-				//I release blue button but computer "thinks" I still press it.
-				Gamepad1.Button1 = TM_USB_HIDDEVICE_Button_Released;
+				//I thought the command that is 5 lines below was sufficient but no...
+				//I released blue button but computer "thought" I still pressed it.
+				Gamepad1.Button1 = TM_USB_HIDDEVICE_Button_Released; //release button 1
 
 				/* Send command to release all buttons on both gamepads */
 				TM_USB_HIDDEVICE_GamepadReleaseAll(TM_USB_HIDDEVICE_Gamepad_Number_1);
 			}
 
-
-			/* Read the board position on axes
-			 * --(own)
-			 * */
+			// Read the board position on axes
 			LIS302DL_Read(&acc_x,LIS302DL_OUT_X_ADDR,1);
 			LIS302DL_Read(&acc_y,LIS302DL_OUT_Y_ADDR,1);
 			LIS302DL_Read(&acc_z,LIS302DL_OUT_Z_ADDR,1);
 
-			/* The value on axis depends on board lean
-			 * Here I used keyboard instead of gamepad stick.
-			* --(own)
-			* */
-			if(acc_x > 40)
+			//The value on axis depends on board lean
+			//HERE: Changing orientation of left joystick under the influence of X-axis
+
+			/* Simulate left stick rotation */
+			/* X axis */
+			if (acc_x > -15 && acc_x < 15) //horizontal position of STM-board
 			{
-				/* Simulate left arrow */
-				Keyboard.Key1 = 0x50;
+				Gamepad1.LeftXAxis = axis_x_avg;
 			}
-			if(acc_x < -40)
+			else
 			{
-				/* Simulate right arrow */
-				Keyboard.Key1 = 0x4F;
-			}
-			if(acc_x <= 40 && acc_x >= -40)
-			{
-				/* Any key pressed */
-				Keyboard.Key1 = 0x00;
+				if (acc_x >= acc_x_max - 10) //maximum right position --> vertical position of STM-board (USB mini-B on top of board)
+				{
+					Gamepad1.LeftXAxis = axis_x_max;
+				}
+				else
+				{
+					if (acc_x <= acc_x_min + 10) //maximum left position --> vertical position of STM-board (mini-jack out and USB micro-B on top )
+					{
+						Gamepad1.LeftXAxis = axis_x_min;
+					}
+					else
+					{
+						Gamepad1.LeftXAxis = acc_x * k + axis_x_avg; //universal formula on left-stick position of gamepad depending on STM position
+						//it seems to be sufficient (without if-conditionals); but using of "if", it ensures more stability
+					}
+				}
 			}
 
-			TM_USB_HIDDEVICE_KeyboardSend(&Keyboard);
+			TM_USB_HIDDEVICE_GamepadSend(TM_USB_HIDDEVICE_Gamepad_Number_1, &Gamepad1);
 
 /* Simple sketch end */
 
