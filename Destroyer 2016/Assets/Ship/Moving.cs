@@ -31,7 +31,7 @@ public class Moving : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire1")) {
             float x = transform.localPosition.x;
          
-            float  y  = (float)7.3;
+            float  y  = (float)6.7;
            
             Instantiate (Missile,new Vector2(x, y),Quaternion.identity);
 			print ("fire");

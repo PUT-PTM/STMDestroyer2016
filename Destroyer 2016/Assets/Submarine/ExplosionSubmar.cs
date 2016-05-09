@@ -14,7 +14,7 @@ public class ExplosionSubmar : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-
+     
         p.Play();
         print("collision");
         damaged = true;
