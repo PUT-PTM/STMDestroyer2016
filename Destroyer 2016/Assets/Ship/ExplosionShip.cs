@@ -11,6 +11,11 @@ public class ExplosionShip : MonoBehaviour {
         Htext.text= "health:" + health.ToString();
     }
 
+    void OnGUI() //don't change name of function
+    {
+        GUI.Label(new Rect(10, 10, 200, 90), "Live:" + health); //show "live" of ship on screen
+    }
+    
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag.Equals("torpedo") == true)
