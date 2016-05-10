@@ -15,7 +15,7 @@ public class Moving : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+        
 		if (transform.position.x <= -range) {
 			transform.position = new Vector2 (-range, transform.position.y);
 		} 

@@ -18,10 +18,10 @@ public class ExplosionShip : MonoBehaviour {
     
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag.Equals("torpedo") == true)
+        if (other.gameObject.tag.Equals("Torpedo") == true)
         {
             health -= 20;
-
+            Destroy(other.gameObject);
 
             if (health <= 0)
             {
