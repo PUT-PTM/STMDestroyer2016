@@ -44,6 +44,8 @@ public class Enemies : MonoBehaviour
             var angles = transform.rotation.eulerAngles;
             angles.x = x_angle; angles.y = y_angle; angles.z = z_angle;
             transform.rotation = Quaternion.Euler(angles);
+            //transform.eulerAngles = new Vector3(x_angle, y_angle, z_angle);
+            //Quaternion.AngleAxis(90, new Vector3(0, 0, 0));
             Instantiate(Submarine, new Vector2(x, y), transform.rotation);
         }
         else

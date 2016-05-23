@@ -11,22 +11,28 @@ public class Moving : MonoBehaviour {
     private int drop_new_missile; //variable which has information when ship can drop next missile
     public int limit_ammo;
     private static int current_ammo; //static because method inc_ammo is also static
+    private static int points; //static because method inc_ammo is also static
 
 	// Use this for initialization
 	void Start () {
-        range = 18;
+        range = 17;
         speed = 2f;
         
         push_missile = false;
         drop_new_missile = fire_pause;
         current_ammo = limit_ammo;
+
+        points = 0;
 	}
 
     public static void inc_ammo() { current_ammo++; } //why static? see: DestroyItself.cs
+    public static void more_points(int how_many) { points += how_many; }
+    public static void less_points(int how_many) { points -= how_many; }
 
     void OnGUI() //don't change name of function
     {
         GUI.Label(new Rect(100, 10, 200, 90), "Ammo:" + current_ammo); //show "ammo" of ship on screen
+        GUI.Label(new Rect(200, 10, 200, 90), "Points:" + points); //show points for player (ship) on screen
     }
 
 	// Update is called once per frame

@@ -8,6 +8,7 @@ public class Explosion : MonoBehaviour {
         print("explosion");
 
         Moving.inc_ammo(); //see more: destroyitself.cs
+        Moving.more_points(10);
     }
 
 }
