@@ -70,7 +70,7 @@ public class SubmarMoving : MonoBehaviour
         float x = transform.localPosition.x;
 
         float y = transform.localPosition.y;
-        y += (float)0.5;
+        y += (float)1.5;
 
         Instantiate(Missile, new Vector2(x, y), Quaternion.identity);
         StartCoroutine(i());

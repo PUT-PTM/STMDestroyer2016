@@ -10,7 +10,7 @@ public class Bonuses : MonoBehaviour {
     void Start () {
      
         StartCoroutine(i());
-        Instantiate(health_bonus, new Vector2(0, 10), Quaternion.identity);
+      
     }
 	
 	// Update is called once per frame
