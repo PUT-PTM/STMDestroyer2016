@@ -12,6 +12,7 @@ public class Moving : MonoBehaviour {
     public int limit_ammo;
     private static int current_ammo; //static because method inc_ammo is also static
     private static int points; //static because method inc_ammo is also static
+    public float bottomOfShip;
 
 	// Use this for initialization
 	void Start () {
@@ -65,7 +66,7 @@ public class Moving : MonoBehaviour {
             {
                 float x = transform.localPosition.x;
 
-                float y = (float)6.8;
+                float y = (float)bottomOfShip; //6.8
 
                 Instantiate(Missile, new Vector2(x, y), Quaternion.identity);
                 print("fire");

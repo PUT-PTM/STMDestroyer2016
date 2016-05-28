@@ -9,6 +9,7 @@ public class SubmarMoving : MonoBehaviour
     private int fire_frequency;
     public bool damaged;
     private ExplosionSubmar exS;
+    public float upwardEveryFrame;
 
     // Use this for initialization
     void Start()
@@ -19,6 +20,7 @@ public class SubmarMoving : MonoBehaviour
         range = 20;
         speed = 2f;
         damaged = false;
+        upwardEveryFrame = 1.5f;
     }
 
     IEnumerator i()
@@ -63,7 +65,7 @@ public class SubmarMoving : MonoBehaviour
         float x = transform.localPosition.x;
 
         float y = transform.localPosition.y;
-        y += (float)1.5;
+        y += (float)upwardEveryFrame;
 
         Instantiate(Missile, new Vector2(x, y), Quaternion.identity);
         StartCoroutine(i());

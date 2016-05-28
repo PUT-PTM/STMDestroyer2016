@@ -5,6 +5,7 @@ public class Bonuses : MonoBehaviour {
     public GameObject health_bonus;
     public int addHealth;
     public int bonusFrequency;
+    public float topScreen;
 
     // Use this for initialization
     void Start () {
@@ -19,7 +20,7 @@ public class Bonuses : MonoBehaviour {
 	}
 
     void createBonus() {
-        float y = 13;
+        float y = topScreen; //13
 
         float x = Random.value;
         x *= 20;

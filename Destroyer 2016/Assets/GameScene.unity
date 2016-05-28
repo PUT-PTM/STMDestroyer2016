@@ -234,7 +234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_bonus: {fileID: 128276, guid: 8d6d8dfc7e33d6b42802705d0c54e7aa, type: 2}
   addHealth: 20
-  bonusFrequency: 80
+  bonusFrequency: 10
+  topScreen: 12.5
 --- !u!4 &590193558
 Transform:
   m_ObjectHideFlags: 0
@@ -480,8 +481,9 @@ MonoBehaviour:
   speed: 8.32
   range: 3.6
   Missile: {fileID: 194036, guid: 25d42ccee682fe64a9fdf6e575e97faa, type: 2}
-  fire_pause: 45
+  fire_pause: 42
   limit_ammo: 7
+  bottomOfShip: 6.8
 --- !u!114 &1640328256
 MonoBehaviour:
   m_ObjectHideFlags: 0

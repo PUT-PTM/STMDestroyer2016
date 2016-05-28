@@ -33,13 +33,16 @@ public class Enemies : MonoBehaviour
     void newEnemy()
     {
 
+        float offScreenLeftSide = -25;
+        float offScreenRightSide = 25;
+        
         float y = maxY + Random.value * difY * (-1);
 
         float x = Random.value;
-        if (x > 0.5) x = 25;
-        else x = -25;
+        if (x > 0.5) x = offScreenRightSide;
+        else x = offScreenLeftSide;
 
-        if (x == 25)
+        if (x == offScreenRightSide)
         {
             var angles = transform.rotation.eulerAngles;
             angles.x = x_angle; angles.y = y_angle; angles.z = z_angle;
