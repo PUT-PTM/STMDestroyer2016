@@ -11,7 +11,7 @@ public class ExplosionShip : MonoBehaviour {
     {
         source = GetComponent<AudioSource>();
         Htext = GetComponent<Text>();
-        Htext.text= "health:" + health.ToString();
+        Htext.text = "health:" + health.ToString(); //it sometimes generates error
         
     }
 
@@ -40,7 +40,7 @@ public class ExplosionShip : MonoBehaviour {
         {
             health += 20;
             Destroy(other.gameObject);
-            Htext.text = "health:" + health.ToString();
+            Htext.text = "health:" + health.ToString(); //it sometimes generates error
         }
             
 

@@ -11,6 +11,15 @@ public class SubmarMoving : MonoBehaviour
     private ExplosionSubmar exS;
     public float upwardEveryFrame;
 
+    // variable to hold a reference to our SpriteRenderer component
+    private SpriteRenderer mySpriteRenderer;
+
+    private void Awake()
+    {
+        // get a reference to the SpriteRenderer component on this gameObject
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -40,21 +49,26 @@ public class SubmarMoving : MonoBehaviour
     {
         float move = speed * Time.deltaTime;
 
-        if (transform.position.x <= -range)
+        // if the variable isn't empty (we have a reference to our SpriteRenderer)
+        if (mySpriteRenderer != null)
         {
-            if (speed < 0)
+            if (transform.position.x <= -range)
             {
-                speed *= -1;
+                if (speed < 0)
+                {
+                    speed *= -1;
+                    mySpriteRenderer.flipX = false;
+                }
+            }
+            else if (transform.position.x >= range)
+            {
+                if (speed > 0)
+                {
+                    speed *= -1;
+                    mySpriteRenderer.flipX = true;
+                }
             }
         }
-        else if (transform.position.x >= range)
-        {
-            if (speed > 0)
-            { 
-                speed *= -1;
-            }
-        }
-        
 
         transform.Translate(move, 0, 0);
     }

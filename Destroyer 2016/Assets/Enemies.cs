@@ -8,7 +8,7 @@ public class Enemies : MonoBehaviour
     private float maxY;
     private float difY;
     private int spawn_frequency;
-    public int x_angle, y_angle, z_angle;
+
     // Use this for initialization
     void Start()
     {
@@ -39,20 +39,12 @@ public class Enemies : MonoBehaviour
         float y = maxY + Random.value * difY * (-1);
 
         float x = Random.value;
-        if (x > 0.5) x = offScreenRightSide;
-        else x = offScreenLeftSide;
-
-        if (x == offScreenRightSide)
-        {
-            var angles = transform.rotation.eulerAngles;
-            angles.x = x_angle; angles.y = y_angle; angles.z = z_angle;
-            transform.rotation = Quaternion.Euler(angles);
-            //transform.eulerAngles = new Vector3(x_angle, y_angle, z_angle);
-            //Quaternion.AngleAxis(90, new Vector3(0, 0, 0));
-            Instantiate(Submarine, new Vector2(x, y), transform.rotation);
-        }
-        else
-            Instantiate(Submarine, new Vector2(x, y), Quaternion.identity);
+        if (x > 0.5) 
+            x = offScreenRightSide;
+        else 
+            x = offScreenLeftSide;
+          
+        Instantiate(Submarine, new Vector2(x, y), Quaternion.identity);
         print("NewSubmarine");
         StartCoroutine(i());
 

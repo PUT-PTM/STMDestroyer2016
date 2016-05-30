@@ -22,8 +22,14 @@ public class Moving : MonoBehaviour {
         push_missile = false;
         drop_new_missile = fire_pause;
         current_ammo = limit_ammo;
-
         points = 0;
+        
+        float adjustShipForResolution_X = transform.localScale.x * Screen.width / 1200;
+        float adjustShipForResolution_Y = transform.localScale.y * Screen.height / 800;
+        float adjustShipForResolution_Z = adjustShipForResolution_X * 1.7f;
+
+        transform.localScale = new Vector3(adjustShipForResolution_X, adjustShipForResolution_Y, adjustShipForResolution_Z);
+        Debug.Log("Resolution:" + Screen.width + "x" + Screen.height);
 	}
 
     public static void inc_ammo() { current_ammo++; } //why static? see: DestroyItself.cs
@@ -38,15 +44,19 @@ public class Moving : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        
-		if (transform.position.x <= -range) {
+
+		if (transform.position.x <= -range) 
+        {
 			transform.position = new Vector2 (-range, transform.position.y);
 		} 
-		else if (transform.position.x >= range) {
-			transform.position = new Vector2 (range, transform.position.y);
-		}
+		else 
+            if (transform.position.x >= range) 
+            {
+			    transform.position = new Vector2 (range, transform.position.y);
+            }
+
 		float move = Input.GetAxis ("Horizontal");
-        //print(move);
+
 		move *= Time.deltaTime;
 		move *= speed;
 		transform.Translate (move,0,0);
