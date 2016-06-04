@@ -1,4 +1,4 @@
-# STMDestroyer2016
+﻿# STMDestroyer2016
 
 ### Overview
 
@@ -31,6 +31,9 @@ The program is compiled thanks to Unity Editor.
 ### License
 
 License: MIT
+Audio:
+Bomb Exploding Sound: http://soundbible.com/1986-Bomb-Exploding.html
+license: https://creativecommons.org/licenses/by/3.0/pl/
 
 ### Credits
 
