@@ -26,8 +26,7 @@ public class ExplosionShip : MonoBehaviour {
         {
             source.Play();
             health -= 20;
-            Destroy(other.gameObject);
-
+            
             if (health <= 0)
             {
                
@@ -36,9 +35,11 @@ public class ExplosionShip : MonoBehaviour {
 
             }
         }
-        else
+        else if(other.gameObject.tag.Equals("HealthBonus")==true)
         {
+            
             health += 20;
+            if (health > 100) health = 100;
             Destroy(other.gameObject);
             Htext.text = "health:" + health.ToString(); //it sometimes generates error
         }

@@ -4,22 +4,38 @@ using System.Collections;
 public class DestroyTorpedo : MonoBehaviour {
 
     public float waterSurface;
-
-	// Use this for initialization
-	void Start () {
+    private ParticleSystem p;
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
+  
+    private AudioSource source;
+    void Start () {
+        p = GetComponent<ParticleSystem>();
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        source = GetComponent<AudioSource>();
         waterSurface = 7.35f;
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
+    IEnumerator i()
     {
-        if (other.gameObject.tag == "Missile")
-        {
-            DestroyObject(gameObject);
-        }
-        
+        yield return new WaitForSeconds(3.5f);
+        DestroyObject(gameObject);
     }
 
-        // Update is called once per frame
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        source.Play();
+        
+            rb.isKinematic = true;
+            sr.enabled = false;
+        Vector3 v = new Vector3(0, 0, 0);
+       p.transform.position = p.transform.localPosition+v;
+        p.Play();
+        StartCoroutine(i());
+      
+    }
+
         void Update()
     {
         if (transform.position.y > waterSurface)

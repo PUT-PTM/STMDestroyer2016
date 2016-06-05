@@ -35,6 +35,7 @@ public class SubmarMoving : MonoBehaviour
     IEnumerator i()
     {
         float a = Random.value * fire_frequency;
+        if (a < 2) a = 2;
         yield return new WaitForSeconds(a);
         if (!exS.damaged)
         {

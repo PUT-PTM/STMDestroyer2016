@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Missile
   - Torpedo
+  - HealthBonus
   - New Tag
   layers:
   - Default

@@ -10,6 +10,7 @@ public class ExplosionSubmar : MonoBehaviour
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
         p = GetComponent<ParticleSystem>();
         source = GetComponent<AudioSource>();
         damaged = false;

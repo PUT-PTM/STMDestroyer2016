@@ -7,7 +7,7 @@ public class Explosion : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag != "Missile")
+        if (other.gameObject.tag != "Missile" && other.gameObject.tag != "Torpedo") 
         {
             DestroyObject(gameObject);
             print("explosion");
@@ -15,6 +15,10 @@ public class Explosion : MonoBehaviour {
             Moving.inc_ammo(); //see more: destroyitself.cs
             Moving.more_points(10); //if player attacks submarine by 3 misiles, he got 30 points, not 10.
 
+        }
+        else
+        {
+            DestroyObject(gameObject);
         }
 
     }
