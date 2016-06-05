@@ -17,13 +17,15 @@ public class ExplosionSubmar : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        
-        source.Play();
-        p.Play();      
-        print("collision");
-        damaged = true;
-        StartCoroutine(i());
 
+    
+  
+            source.Play();
+            p.Play();
+            print("collision");
+            damaged = true;
+            StartCoroutine(i());
+        
     }
 
     IEnumerator i()

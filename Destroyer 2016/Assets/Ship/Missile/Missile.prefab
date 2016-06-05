@@ -13,9 +13,9 @@ GameObject:
   - 114: {fileID: 11419760}
   - 114: {fileID: 11400754}
   - 61: {fileID: 6118352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Missile
-  m_TagString: Untagged
+  m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478aa02c8ae093944a904b989211b003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seabed: 0
 --- !u!114 &11419760
 MonoBehaviour:
   m_ObjectHideFlags: 1

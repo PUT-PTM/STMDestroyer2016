@@ -10,8 +10,17 @@ public class DestroyTorpedo : MonoBehaviour {
         waterSurface = 7.35f;
 	}
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Missile")
+        {
+            DestroyObject(gameObject);
+        }
+        
+    }
+
+        // Update is called once per frame
+        void Update()
     {
         if (transform.position.y > waterSurface)
         {
