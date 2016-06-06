@@ -220,6 +220,7 @@ GameObject:
   - 212: {fileID: 101108251}
   - 222: {fileID: 101108250}
   - 82: {fileID: 101108249}
+  - 61: {fileID: 101108258}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -1893,9 +1894,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.00000011920929, y: 0}
+  m_Offset: {x: 0.00000015894572, y: -0.18995222}
   serializedVersion: 2
-  m_Size: {x: 2.4079196, y: 0.7058077}
+  m_Size: {x: 2.4079196, y: 0.3259043}
 --- !u!114 &101108256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1924,6 +1925,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!61 &101108258
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 101108248}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.1477978, y: 0.16498534}
+  serializedVersion: 2
+  m_Size: {x: 0.66042566, y: 0.37919492}
 --- !u!1 &602043128
 GameObject:
   m_ObjectHideFlags: 0
