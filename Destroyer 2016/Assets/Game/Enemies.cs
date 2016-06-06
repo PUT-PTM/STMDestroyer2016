@@ -10,7 +10,9 @@ public class Enemies : MonoBehaviour
     private int spawn_frequency;
     public int subs_to_produce;
     private int max_subs;
+    private int subs_on_map;
 
+    GUIStyle style = new GUIStyle();
     public GUIText WinText;
 
     // Use this for initialization
@@ -18,6 +20,7 @@ public class Enemies : MonoBehaviour
     {
         //subs_to_produce = 3;
         max_subs = subs_to_produce;
+        subs_on_map = 0;
 
         spawn_frequency = 5;
         StartCoroutine(i());
@@ -82,20 +85,39 @@ public class Enemies : MonoBehaviour
     void OnGUI() //don't change name of function
     {
 
-        int subs_on_map = current_subs_quantity();
 
         GUI.Label(new Rect(600, 10, 200, 90), "Submarines:" + subs_on_map + "/" + max_subs);
-
-        if (subs_on_map == 0 && subs_to_produce == 0)
+        if (subs_to_produce == 0 && subs_on_map == 0)
+        {
+            style.fontSize = 30;
+            if (SceneManager.GetActiveScene().name != "Level 3")
             {
-                DeleteMovingObjects();
-                Triumph();
+                GUI.Label(new Rect(500, 350, 100, 30), "Good! Next level...", style);
             }
+            else
+            {
+                GUI.Label(new Rect(575, 350, 100, 30), "Winner!", style);
+            }
+        }
+        
+    }
+
+    void Update()
+    {
+        subs_on_map = current_subs_quantity();
+        if (subs_on_map == 0 && subs_to_produce == 0)
+        {
+            DeleteMovingObjects();
+            Triumph();
+        }
     }
 
     //dg
-    public void DeleteMovingObjects()
+    IEnumerator DeleteMovingObjects()
     {
+
+        yield return new WaitForSeconds(60f);
+        
         foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
         {
             if (o.name != "Camera" && o.name != "background")

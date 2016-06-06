@@ -8,17 +8,24 @@ public class ExplosionShip : MonoBehaviour {
     private AudioSource source;
     public int health = 100;
     public Text Htext;
+    private bool kill;
+    GUIStyle style = new GUIStyle();
     void Start()
     {
         source = GetComponent<AudioSource>();
         Htext = GetComponent<Text>();
         Htext.text = "health:" + health.ToString(); //it sometimes generates error
-        
+        kill = false;
     }
 
     void OnGUI() //don't change name of function
     {
         GUI.Label(new Rect(10, 10, 200, 90), "Live:" + health); //show "live" of ship on screen
+        if (kill)
+        {
+            style.fontSize = 30;
+            GUI.Label(new Rect(575, 350, 100, 30), "Game over!", style);
+        }
     }
     
     void OnCollisionEnter2D(Collision2D other)
@@ -58,6 +65,7 @@ public class ExplosionShip : MonoBehaviour {
     }
     IEnumerator i()
     {
+        kill = true;
         yield return new WaitForSeconds(3f);
         DestroyObject(gameObject);
         DeleteMovingObjects();//dg
@@ -72,7 +80,7 @@ public class ExplosionShip : MonoBehaviour {
         Moving.switchSides = false;
     }
 
-    //dg
+
     public void DeleteMovingObjects()
     {
         foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
