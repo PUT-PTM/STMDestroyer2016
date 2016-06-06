@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ExplosionShip : MonoBehaviour {
     public ParticleSystem p;
     public AudioClip bomb_explosion;
@@ -51,7 +52,7 @@ public class ExplosionShip : MonoBehaviour {
     IEnumerator i()
     {
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         DestroyObject(gameObject);
         DeleteMovingObjects();//dg
         GameOver();//dg
@@ -71,6 +72,7 @@ public class ExplosionShip : MonoBehaviour {
     public void GameOver()
     {
         //need monit that player loss
+        SceneManager.LoadScene("Menu");
     }
 
 }

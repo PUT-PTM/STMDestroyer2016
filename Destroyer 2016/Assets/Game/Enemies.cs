@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class Enemies : MonoBehaviour
 {
     public GameObject Submarine;
@@ -8,7 +8,7 @@ public class Enemies : MonoBehaviour
     private float maxY;
     private float difY;
     private int spawn_frequency;
-    private int subs_to_produce;
+    public int subs_to_produce;
     private int max_subs;
 
     public GUIText WinText;
@@ -16,7 +16,7 @@ public class Enemies : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        subs_to_produce = 3;
+        //subs_to_produce = 3;
         max_subs = subs_to_produce;
 
         spawn_frequency = 5;
@@ -106,10 +106,27 @@ public class Enemies : MonoBehaviour
     //dg
     public void Triumph()
     {
-        //need monit that player wins
         
-        
-        /*WinText.text = "Winner";
-        WinText.enabled = true;*/
+
+        if(SceneManager.GetActiveScene().name=="Level 1")
+        {
+            //info że następny poziom
+            SceneManager.LoadScene("Level 2");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            //info że następny poziom
+            SceneManager.LoadScene("Level 3");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+
+            //need monit that player wins
+
+
+            /*WinText.text = "Winner";
+            WinText.enabled = true;*/
+        }
+
     }
 }
