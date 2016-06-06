@@ -13,6 +13,7 @@ public class Moving : MonoBehaviour {
     private static int current_ammo; //static because method inc_ammo is also static
     private static int points; //static because method inc_ammo is also static
     public float bottomOfShip;
+    public static bool switchSides = false;
 
 	// Use this for initialization
 	void Start () {
@@ -59,6 +60,10 @@ public class Moving : MonoBehaviour {
 
 		move *= Time.deltaTime;
 		move *= speed;
+        if (switchSides)
+        {
+            move *= -1;
+        }
 		transform.Translate (move,0,0);
 
         if (push_missile)

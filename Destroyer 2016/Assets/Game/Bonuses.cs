@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Bonuses : MonoBehaviour {
     public GameObject health_bonus;
+    public GameObject changeSides_bonus;
     public int addHealth;
     public int bonusFrequency;
     public float topScreen;
@@ -27,8 +28,16 @@ public class Bonuses : MonoBehaviour {
         float temp = Random.value;
         if (temp < 0.5) x *= -1;
 
-
-        Instantiate(health_bonus, new Vector2(x, y), Quaternion.identity);
+        temp = Random.value;
+        if (temp < 0.8)
+        {
+            Instantiate(health_bonus, new Vector2(x, y), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(changeSides_bonus, new Vector2(x, y), Quaternion.identity);
+        }
+        
         print("NewBonus");
         StartCoroutine(i());
     }

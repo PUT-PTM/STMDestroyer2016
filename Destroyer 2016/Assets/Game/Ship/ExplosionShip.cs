@@ -44,18 +44,32 @@ public class ExplosionShip : MonoBehaviour {
             Destroy(other.gameObject);
             Htext.text = "health:" + health.ToString(); //it sometimes generates error
         }
+        else if (other.gameObject.tag.Equals("changeSides_bonus") == true)
+        {
+
             
+            Moving.switchSides = true;
+            Destroy(other.gameObject);
+            StartCoroutine(switchSides());
+        }
 
         
         
     }
     IEnumerator i()
     {
-
         yield return new WaitForSeconds(3f);
         DestroyObject(gameObject);
         DeleteMovingObjects();//dg
         GameOver();//dg
+
+    }
+
+    IEnumerator switchSides()
+    {
+
+        yield return new WaitForSeconds(15f);
+        Moving.switchSides = false;
     }
 
     //dg
