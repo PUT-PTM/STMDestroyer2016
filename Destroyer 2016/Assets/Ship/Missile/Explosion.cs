@@ -18,7 +18,9 @@ public class Explosion : MonoBehaviour {
         }
         else
         {
-            DestroyObject(gameObject);
+            DestroyObject(gameObject); 
+            //dg
+            Moving.inc_ammo(); //i set method inc_ammo as static because i have problem with inheritance (GetComponent don't work correctly)
         }
 
     }

@@ -53,5 +53,24 @@ public class ExplosionShip : MonoBehaviour {
 
         yield return new WaitForSeconds(2f);
         DestroyObject(gameObject);
+        DeleteMovingObjects();//dg
+        GameOver();//dg
     }
+
+    //dg
+    public void DeleteMovingObjects()
+    {
+        foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
+        {
+            if (o.name != "Camera" && o.name != "background")
+                Destroy(o);
+        }
+    }
+
+    //dg
+    public void GameOver()
+    {
+        //need monit that player loss
+    }
+
 }
