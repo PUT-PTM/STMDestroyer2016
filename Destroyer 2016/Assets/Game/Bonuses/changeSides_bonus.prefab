@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11491884}
   m_Layer: 0
   m_Name: changeSides_bonus
-  m_TagString: New Tag
+  m_TagString: changeSides_bonus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
