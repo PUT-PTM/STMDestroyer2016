@@ -9,7 +9,6 @@ TagManager:
   - HealthBonus
   - changeSides_bonus
   - New Tag
-  - GameOver
   layers:
   - Default
   - TransparentFX

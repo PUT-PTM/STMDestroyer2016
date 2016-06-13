@@ -31,7 +31,7 @@ public class ExplosionSubmar : MonoBehaviour
 
     IEnumerator i()
     {
-        yield return new WaitForSeconds(5f); //3.5f
+        yield return new WaitForSeconds(3.5f);
         DestroyObject(gameObject); 
     }
 }

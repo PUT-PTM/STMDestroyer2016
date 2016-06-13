@@ -4,8 +4,8 @@
 <window>
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.debug.ui.ExpressionView"/>
-<orientation position="512" view="org.coocox.builder.ui.views.ProjectView"/>
 <orientation position="512" view="org.coocox.component.ui.ComponentView"/>
+<orientation position="512" view="org.coocox.builder.ui.views.ProjectView"/>
 <orientation position="512" view="org.coocox.codebugger.trace.ui.traceview"/>
 <orientation position="512" view="org.eclipse.debug.ui.DebugView"/>
 <orientation position="512" view="org.eclipse.ui.console.ConsoleView"/>
@@ -36,9 +36,9 @@
 <input factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory">&#x0A;<org.coocox.welcome.ui.WelcomePage/>
 </input>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/MasterX/Documents/GitHub/STMDestroyer2016/STMDestroyer2016/Destroyer 2016/STM Controller/main.c" title="main.c" tooltip="C:/Users/MasterX/Documents/GitHub/STMDestroyer2016/STMDestroyer2016/Destroyer 2016/STM Controller/main.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Janek/Documents/GitHub/STMDestroyer2016/Destroyer 2016/STM Controller/main.c" title="main.c" tooltip="C:/Users/Janek/Documents/GitHub/STMDestroyer2016/Destroyer 2016/STM Controller/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/stm32f429_project/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6753" selectionTopPixel="2763"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1195" selectionTopPixel="210"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="defines.h" partName="defines.h" path="D:/Projekty/coocox/PTM_STM_pad/01-STM32F429_Coocox_CMSIS_Default_Project/defines.h" title="defines.h" tooltip="D:/Projekty/coocox/PTM_STM_pad/01-STM32F429_Coocox_CMSIS_Default_Project/defines.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/stm32f429_project/defines.h"/>
@@ -444,48 +444,48 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="stm32f429_project/cmsis_boot/system_stm32f4xx.c">
-<persistable path="/stm32f429_project/cmsis_boot/system_stm32f4xx.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_gpio.h" tooltip="dac/cmsis_lib/include/stm32f4xx_gpio.h">
+<persistable path="/dac/cmsis_lib/include/stm32f4xx_gpio.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="stm32f429_project/cmsis_boot/stm32f4xx.h">
-<persistable path="/stm32f429_project/cmsis_boot/stm32f4xx.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="dac/main.c">
+<persistable path="/dac/main.c"/>
 </file>
 <file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
 <persistable>&#x0A;<subPage/>
 </persistable>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.h" tooltip="stm32f429_project/cmsis_boot/system_stm32f4xx.h">
-<persistable path="/stm32f429_project/cmsis_boot/system_stm32f4xx.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_dac.h" tooltip="pusty/cmsis_lib/include/stm32f4xx_dac.h">
+<persistable path="/pusty/cmsis_lib/include/stm32f4xx_dac.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_disco.h" tooltip="stm32f429_project/tm/tm_stm32f4_disco/tm_stm32f4_disco.h">
-<persistable path="/stm32f429_project/tm/tm_stm32f4_disco/tm_stm32f4_disco.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="pusty/cmsis_boot/stm32f4xx.h">
+<persistable path="/pusty/cmsis_boot/stm32f4xx.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="defines.h" tooltip="stm32f429_project/defines.h">
-<persistable path="/stm32f429_project/defines.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.h" tooltip="pusty/cmsis_boot/system_stm32f4xx.h">
+<persistable path="/pusty/cmsis_boot/system_stm32f4xx.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tm_stm32f4_usb_hid_device.h" tooltip="stm32f429_project/tm/tm_stm32f4_usb_hid_device/tm_stm32f4_usb_hid_device.h">
-<persistable path="/stm32f429_project/tm/tm_stm32f4_usb_hid_device/tm_stm32f4_usb_hid_device.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="pusty/main.c">
+<persistable path="/pusty/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="stm32f429_project/main.c">
-<persistable path="/stm32f429_project/main.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="testowo/main.c">
+<persistable path="/testowo/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="Szablon/cmsis_boot/system_stm32f4xx.c">
-<persistable path="/Szablon/cmsis_boot/system_stm32f4xx.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="testowo/cmsis_boot/stm32f4xx.h">
+<persistable path="/testowo/cmsis_boot/stm32f4xx.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Szablon/main.c">
-<persistable path="/Szablon/main.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="testowo/main.c">
+<persistable path="/testowo/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Projekt/main.c">
-<persistable path="/Projekt/main.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="testowo/cmsis_boot/stm32f4xx.h">
+<persistable path="/testowo/cmsis_boot/stm32f4xx.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="Projekt/cmsis_boot/stm32f4xx.h">
-<persistable path="/Projekt/cmsis_boot/stm32f4xx.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="testowo/main.c">
+<persistable path="/testowo/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="Projekt/cmsis_boot/system_stm32f4xx.c">
-<persistable path="/Projekt/cmsis_boot/system_stm32f4xx.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="testowo/cmsis_boot/stm32f4xx.h">
+<persistable path="/testowo/cmsis_boot/stm32f4xx.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="test/cmsis_boot/system_stm32f4xx.c">
-<persistable path="/test/cmsis_boot/system_stm32f4xx.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="testowo/main.c">
+<persistable path="/testowo/main.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="test/cmsis_boot/system_stm32f4xx.c">
 <persistable path="/test/cmsis_boot/system_stm32f4xx.c"/>

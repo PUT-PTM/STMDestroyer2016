@@ -15,8 +15,6 @@ public class Enemies : MonoBehaviour
     GUIStyle style = new GUIStyle();
     public GUIText WinText;
 
-    private int word_height, word_width;
-
     // Use this for initialization
     void Start()
     {
@@ -87,20 +85,18 @@ public class Enemies : MonoBehaviour
     void OnGUI() //don't change name of function
     {
 
+
+        GUI.Label(new Rect(600, 10, 200, 90), "Submarines:" + subs_on_map + "/" + max_subs);
         if (subs_to_produce == 0 && subs_on_map == 0)
         {
             style.fontSize = 30;
             if (SceneManager.GetActiveScene().name != "Level 3")
             {
-                //GUI.Label(new Rect(500, 350, 100, 30), "Good! Next level...", style);
-                word_width = 100; word_height = 30;
-                GUI.Label(new Rect(Screen.width / 2 - word_width / 2, Screen.height / 2 - word_height / 2, word_width, word_height), "Next level...", style);
+                GUI.Label(new Rect(500, 350, 100, 30), "Good! Next level...", style);
             }
             else
             {
-                //GUI.Label(new Rect(575, 350, 100, 30), "Winner!", style);
-                word_width = 100; word_height = 30;
-                GUI.Label(new Rect(Screen.width / 2 - word_width / 2, Screen.height / 2 - word_height / 2, word_width, word_height), "Winner!", style);
+                GUI.Label(new Rect(575, 350, 100, 30), "Winner!", style);
             }
         }
         

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class Moving : MonoBehaviour {
 
@@ -18,14 +17,20 @@ public class Moving : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        range = 17.66f; //10 * Screen.width / Screen.height;
+        range = 17.66f;
         speed = 3f;
         
         push_missile = false;
         drop_new_missile = fire_pause;
         current_ammo = limit_ammo;
         points = 0;
+        
+      //  float adjustShipForResolution_X = transform.localScale.x * Screen.width / 1200;
+        //float adjustShipForResolution_Y = transform.localScale.y * Screen.height / 800;
+        //float adjustShipForResolution_Z = adjustShipForResolution_X * 1.7f;
 
+      //  transform.localScale = new Vector3(adjustShipForResolution_X, adjustShipForResolution_Y, adjustShipForResolution_Z);
+      //  Debug.Log("Resolution:" + Screen.width + "x" + Screen.height);
 	}
 
     public static void inc_ammo() { current_ammo++; } //why static? see: DestroyItself.cs
@@ -85,11 +90,6 @@ public class Moving : MonoBehaviour {
                 current_ammo--;
             }
 		}
-
-        if (Input.GetButtonDown("Cancel"))
-        {
-            SceneManager.LoadScene("Menu");
-        }
 
 	
 	}
