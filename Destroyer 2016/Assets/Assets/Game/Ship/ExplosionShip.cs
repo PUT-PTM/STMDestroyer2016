@@ -10,6 +10,9 @@ public class ExplosionShip : MonoBehaviour {
     public Text Htext;
     private bool kill;
     GUIStyle style = new GUIStyle();
+
+    private int word_height, word_width;
+
     void Start()
     {
         source = GetComponent<AudioSource>();
@@ -20,11 +23,12 @@ public class ExplosionShip : MonoBehaviour {
 
     void OnGUI() //don't change name of function
     {
-        GUI.Label(new Rect(10, 10, 200, 90), "Live:" + health); //show "live" of ship on screen
+        GUI.Label(new Rect(10, 10, 200, 90), "Live:" + health + "%"); //show "live" of ship on screen
         if (kill)
         {
             style.fontSize = 30;
-            GUI.Label(new Rect(575, 350, 100, 30), "Game over!", style);
+            word_width = 100; word_height = 30;
+            GUI.Label(new Rect(Screen.width / 2 - word_width / 2, Screen.height / 2 - word_height / 2, word_width, word_height), "Game over!", style);
         }
     }
     
