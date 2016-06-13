@@ -87,7 +87,14 @@ int main(void) {
 	const int8_t axis_x_avg = (axis_x_min + axis_x_max) / 2; //The value presented center position of left stick
 	const int8_t acc_x_min = -60; //Minimum (approximately) value reading from accelerometer for X-axis
 	const int8_t acc_x_max = 60; //Maximum (approximately) value reading from accelerometer for X-axis
-	const int8_t k = (-axis_x_min + axis_x_max) / (-acc_x_min + acc_x_max); //Thanks to this ratio, can create universal formula on value of gamepad left-axis depends on STM-board position
+	const int8_t kx = (-axis_x_min + axis_x_max) / (-acc_x_min + acc_x_max); //Thanks to this ratio, can create universal formula on value of gamepad left-axis depends on STM-board position
+
+		const int8_t axis_y_min = 0; //The number represents maximum deflection of left-stick on top; Default: -128 (!The value recommended for Unity game: 0 - Unity can read only not minus numbers of axis!)
+		const int8_t axis_y_max = 127; //The number represents maximum deflection of left-stick on bottom; Default: 127
+		const int8_t axis_y_avg = (axis_y_min + axis_y_max) / 2; //The value presented center position of left stick
+		const int8_t acc_y_min = -60; //Minimum (approximately) value reading from accelerometer for Y-axis
+		const int8_t acc_y_max = 60; //Maximum (approximately) value reading from accelerometer for Y-axis
+		const int8_t ky = (-axis_y_min + axis_y_max) / (-acc_y_min + acc_y_max); //Thanks to this ratio, can create universal formula on value of gamepad left-axis depends on STM-board position
 
 	while (1) {
 		/* If we are connected and drivers are OK */
@@ -148,7 +155,32 @@ int main(void) {
 					}
 					else
 					{
-						Gamepad1.LeftXAxis = acc_x * k + axis_x_avg; //universal formula on left-stick position of gamepad depending on STM position
+						Gamepad1.LeftXAxis = acc_x * kx + axis_x_avg; //universal formula on left-stick position of gamepad depending on STM position
+						//it seems to be sufficient (without if-conditionals); but using of "if", it ensures more stability
+					}
+				}
+			}
+
+			/* Y axis */
+			if (acc_y > -15 && acc_y < 15) //horizontal position of STM-board
+			{
+				Gamepad1.LeftYAxis = axis_y_avg;
+			}
+			else
+			{
+				if (acc_y >= acc_x_max - 10) //maximum "up" position --> blue button of STM is higher than black reset-button
+				{
+					Gamepad1.LeftYAxis = axis_y_min;
+				}
+				else
+				{
+					if (acc_y <= acc_x_min + 10) //maximum "down" position --> black button of STM is higher than blue button
+					{
+						Gamepad1.LeftYAxis = axis_y_max;
+					}
+					else
+					{
+						Gamepad1.LeftYAxis = acc_y * (-ky) + axis_y_avg; //universal formula on left-stick position of gamepad depending on STM position
 						//it seems to be sufficient (without if-conditionals); but using of "if", it ensures more stability
 					}
 				}
