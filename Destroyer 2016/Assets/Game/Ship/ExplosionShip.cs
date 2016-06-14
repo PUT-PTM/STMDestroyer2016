@@ -58,10 +58,17 @@ public class ExplosionShip : MonoBehaviour {
         else if (other.gameObject.tag.Equals("changeSides_bonus") == true)
         {
 
-            
+            if (Moving.switchSides == true)
+            {
+                Moving.switchSides = false;
+                Destroy(other.gameObject);
+                
+            }
+            else {
             Moving.switchSides = true;
             Destroy(other.gameObject);
             StartCoroutine(switchSides());
+            }
         }
 
         
@@ -81,6 +88,7 @@ public class ExplosionShip : MonoBehaviour {
     {
 
         yield return new WaitForSeconds(15f);
+        if (Moving.switchSides == true)
         Moving.switchSides = false;
     }
 
