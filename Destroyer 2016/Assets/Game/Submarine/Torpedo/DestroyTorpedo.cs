@@ -30,7 +30,7 @@ public class DestroyTorpedo : MonoBehaviour {
             rb.isKinematic = true;
             sr.enabled = false;
       
-        Vector3 v = new Vector3(0, 1, 0);
+        Vector3 v = new Vector3(0, 0, 0);
        p.transform.position = p.transform.localPosition+v;
         p.Play();
         StartCoroutine(i());
@@ -40,12 +40,6 @@ public class DestroyTorpedo : MonoBehaviour {
         void Update()
     {
         if (transform.position.y > waterSurface)
-        {
-            rb.isKinematic = true;
-            sr.enabled = false;
-           
-        }
-        if (transform.position.y > waterSurface+5)
         {
             DestroyObject(gameObject);
         }

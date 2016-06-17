@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class Enemies : MonoBehaviour
 {
     public GameObject Submarine;
@@ -11,15 +12,17 @@ public class Enemies : MonoBehaviour
     public int subs_to_produce;
     private int max_subs;
     private int subs_on_map;
-
-    GUIStyle style = new GUIStyle();
-    public GUIText WinText;
+    private bool pause;
+    public Text NextLevel;
+    public Text Winner;
 
     private int word_height, word_width;
 
     // Use this for initialization
     void Start()
     {
+        NextLevel.enabled = false;
+        Winner.enabled = false;
         //subs_to_produce = 3;
         max_subs = subs_to_produce;
         subs_on_map = 0;
@@ -48,6 +51,34 @@ public class Enemies : MonoBehaviour
             subs_to_produce--;
         }
     }
+
+    IEnumerator newScene()
+    {
+
+
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            NextLevel.enabled = true;
+            yield return new WaitForSeconds(4);
+            SceneManager.LoadScene("Level 2");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            NextLevel.enabled = true;
+            yield return new WaitForSeconds(4);
+            SceneManager.LoadScene("Level 3");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            Winner.enabled = true;
+            yield return new WaitForSeconds(4);
+            SceneManager.LoadScene("Menu");
+
+        }
+    }
+
+
+
 
     void newEnemy()
     {
@@ -80,79 +111,18 @@ public class Enemies : MonoBehaviour
             if (o.name == "Submarine(Clone)")
                 counter++;
         }
-        
+
         return counter;
-    }
-
-    void OnGUI() //don't change name of function
-    {
-
-        if (subs_to_produce == 0 && subs_on_map == 0)
-        {
-            style.fontSize = 30;
-            if (SceneManager.GetActiveScene().name != "Level 3")
-            {
-                //GUI.Label(new Rect(500, 350, 100, 30), "Good! Next level...", style);
-                word_width = 100; word_height = 30;
-                GUI.Label(new Rect(Screen.width / 2 - word_width / 2, Screen.height / 2 - word_height / 2, word_width, word_height), "Next level...", style);
-            }
-            else
-            {
-                //GUI.Label(new Rect(575, 350, 100, 30), "Winner!", style);
-                word_width = 100; word_height = 30;
-                GUI.Label(new Rect(Screen.width / 2 - word_width / 2, Screen.height / 2 - word_height / 2, word_width, word_height), "Winner!", style);
-            }
-        }
-        
     }
 
     void Update()
     {
+
         subs_on_map = current_subs_quantity();
-        if (subs_on_map == 0 && subs_to_produce == 0)
+        if (subs_to_produce == 0 && subs_on_map == 0)
         {
-            DeleteMovingObjects();
-            Triumph();
+            StartCoroutine(newScene());
         }
     }
 
-    //dg
-    IEnumerator DeleteMovingObjects()
-    {
-
-        yield return new WaitForSeconds(60f);
-        
-        foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
-        {
-            if (o.name != "Camera" && o.name != "background")
-                Destroy(o);
-        }
-    }
-
-    //dg
-    public void Triumph()
-    {
-        
-
-        if(SceneManager.GetActiveScene().name=="Level 1")
-        {
-            //info że następny poziom
-            SceneManager.LoadScene("Level 2");
-        }
-        if (SceneManager.GetActiveScene().name == "Level 2")
-        {
-            //info że następny poziom
-            SceneManager.LoadScene("Level 3");
-        }
-        if (SceneManager.GetActiveScene().name == "Level 3")
-        {
-
-            //need monit that player wins
-
-
-            /*WinText.text = "Winner";
-            WinText.enabled = true;*/
-        }
-
-    }
 }

@@ -20,7 +20,7 @@ public class Moving : MonoBehaviour {
 	void Start () {
         range = 17.66f; //10 * Screen.width / Screen.height;
         speed = 3f;
-        
+        switchSides = false;
         push_missile = false;
         drop_new_missile = fire_pause;
         current_ammo = limit_ammo;
