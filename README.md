@@ -28,10 +28,10 @@ Click on execute file, eventually change resolution or control settings and clic
 
 Control:
 
-UP		Horizontal position of board/microUSB from leftside/miniUSB from rightside/user sees back of board
-DOWN	Horizontal position of board/microUSB from leftside/miniUSB from rightside/user sees front of board
-LEFT	Vertical position of board/miniUSB higher than microUSB
-RIGHT	Vertical position of board/microUSB and minijack higher than miniUSB port
+UP		Horizontal position of board/microUSB from leftside/miniUSB from rightside/user sees back of board<br>
+DOWN	Horizontal position of board/microUSB from leftside/miniUSB from rightside/user sees front of board<br>
+LEFT	Vertical position of board/miniUSB higher than microUSB<br>
+RIGHT	Vertical position of board/microUSB and minijack higher than miniUSB port<br>
 
 Depending on the inclination of the device, the destroyer will move to the left or right. 
 Blue button will cause the drop of depth charges.
@@ -41,12 +41,13 @@ Blue button will cause the drop of depth charges.
 Connect your device to your computer with 2 wires (mini USB-USB A to power and microUSB-USB A to gamepad mode)
 
 STM as controller:
-1. Download "STM32 ST-Link Utility" (<a href='http://download.freedownloadmanager.org/Windows-PC/STM32-ST-Link-Utility/FREE-3.8.0.html'>link</a>)
-2. Click on file and install programm
-3. Run the programm after installation
-4. Go to "Target" section and choose "Program"
-5. You see new window. Look on "File path" and click "Browse" button to find  "stm32f429_project.hex" (end of path: "...\Release\STM Controller")
-6. Press "Start" button
+
+1. Download "STM32 ST-Link Utility" (<a href='http://download.freedownloadmanager.org/Windows-PC/STM32-ST-Link-Utility/FREE-3.8.0.html'>link</a>) <br>
+2. Click on file and install programm <br>
+3. Run the programm after installation <br>
+4. Go to "Target" section and choose "Program" <br>
+5. You see new window. Look on "File path" and click "Browse" button to find  "stm32f429_project.hex" (end of path: "...\Release\STM Controller") <br>
+6. Press "Start" button <br>
 7. Now STM32 is ready for use as gamepad
 
 ### Future improvements

@@ -17,7 +17,6 @@ public class ExplosionShip : MonoBehaviour {
     {
         source = GetComponent<AudioSource>();
         Htext = GetComponent<Text>();
-        Htext.text = "health:" + health.ToString(); //it sometimes generates error
         kill = false;
     }
 
@@ -48,12 +47,10 @@ public class ExplosionShip : MonoBehaviour {
             }
         }
         else if(other.gameObject.tag.Equals("HealthBonus")==true)
-        {
-            
+        {           
             health += 20;
             if (health > 100) health = 100;
             Destroy(other.gameObject);
-            Htext.text = "health:" + health.ToString(); //it sometimes generates error
         }
         else if (other.gameObject.tag.Equals("changeSides_bonus") == true)
         {
@@ -79,8 +76,8 @@ public class ExplosionShip : MonoBehaviour {
         kill = true;
         yield return new WaitForSeconds(3f);
         DestroyObject(gameObject);
-        DeleteMovingObjects();//dg
-        GameOver();//dg
+        DeleteMovingObjects();
+        GameOver();
 
     }
 
@@ -102,10 +99,8 @@ public class ExplosionShip : MonoBehaviour {
         }
     }
 
-    //dg
     public void GameOver()
     {
-        //need monit that player loss
         SceneManager.LoadScene("Menu");
     }
 

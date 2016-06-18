@@ -39,8 +39,7 @@ public class SubmarMoving : MonoBehaviour
         yield return new WaitForSeconds(a);
         if (!exS.damaged)
         {
-            //if (transform.position.y > 0) //don't shoot if submarine moves too close to the destroyer
-                fire();
+           fire();
         }
     }
 

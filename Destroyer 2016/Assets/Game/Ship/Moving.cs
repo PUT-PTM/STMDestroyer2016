@@ -76,7 +76,7 @@ public class Moving : MonoBehaviour {
             {
                 float x = transform.localPosition.x;
 
-                float y = (float)bottomOfShip; //6.8
+                float y = (float)bottomOfShip;
 
                 Instantiate(Missile, new Vector2(x, y), Quaternion.identity);
                 print("fire");

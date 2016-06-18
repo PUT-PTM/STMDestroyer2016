@@ -19,7 +19,7 @@ public class DestroyTorpedo : MonoBehaviour {
 
     IEnumerator i()
     {
-        yield return new WaitForSeconds(5f);//3.5f
+        yield return new WaitForSeconds(5f);
         DestroyObject(gameObject);
     }
 
@@ -31,13 +31,13 @@ public class DestroyTorpedo : MonoBehaviour {
             sr.enabled = false;
       
         Vector3 v = new Vector3(0, 0, 0);
-       p.transform.position = p.transform.localPosition+v;
+        p.transform.position = p.transform.localPosition+v;
         p.Play();
         StartCoroutine(i());
       
     }
 
-        void Update()
+    void Update()
     {
         if (transform.position.y > waterSurface)
         {

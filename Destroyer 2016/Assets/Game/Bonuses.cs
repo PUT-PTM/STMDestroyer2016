@@ -21,7 +21,7 @@ public class Bonuses : MonoBehaviour {
 	}
 
     void createBonus() {
-        float y = topScreen; //13
+        float y = topScreen;
 
         float x = Random.value;
         x *= 20;
@@ -46,14 +46,7 @@ public class Bonuses : MonoBehaviour {
     {
         float a = Random.value * bonusFrequency;
         yield return new WaitForSeconds(a);
-        createBonus();
-
-
-
-        
+        createBonus();   
     }
-
-
-
 
 }

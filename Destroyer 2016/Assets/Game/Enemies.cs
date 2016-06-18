@@ -10,7 +10,6 @@ public class Enemies : MonoBehaviour
     private float difY;
     private int spawn_frequency;
     public int subs_to_produce;
-    private int max_subs;
     private int subs_on_map;
     private bool pause;
     public Text NextLevel;
@@ -23,8 +22,6 @@ public class Enemies : MonoBehaviour
     {
         NextLevel.enabled = false;
         Winner.enabled = false;
-        //subs_to_produce = 3;
-        max_subs = subs_to_produce;
         subs_on_map = 0;
 
         spawn_frequency = 5;
@@ -33,11 +30,6 @@ public class Enemies : MonoBehaviour
         maxY = 5;
         minY = -8;
         difY = maxY - minY;
-
-        //GameObject mynewcard = (GameObject)Instantiate(card);
-        //RectTransform rt = Submarine.GetComponent<RectTransform>();
-        //float width = rt.rect.width; float height = rt.rect.height;
-        //Debug.Log("wymiary okretu: " + width + "x" + height);
     }
 
 
@@ -107,7 +99,6 @@ public class Enemies : MonoBehaviour
 
         foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
         {
-            //Debug.Log("name: " + o.name);
             if (o.name == "Submarine(Clone)")
                 counter++;
         }
@@ -117,7 +108,6 @@ public class Enemies : MonoBehaviour
 
     void Update()
     {
-
         subs_on_map = current_subs_quantity();
         if (subs_to_produce == 0 && subs_on_map == 0)
         {

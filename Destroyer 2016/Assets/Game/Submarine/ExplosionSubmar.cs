@@ -18,20 +18,16 @@ public class ExplosionSubmar : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-
-    
-  
-            source.Play();
-            p.Play();
-            print("collision");
-            damaged = true;
-            StartCoroutine(i());
-        
+        source.Play();
+        p.Play();
+        print("collision");
+        damaged = true;
+        StartCoroutine(i());
     }
 
     IEnumerator i()
     {
-        yield return new WaitForSeconds(5f); //3.5f
+        yield return new WaitForSeconds(5f);
         DestroyObject(gameObject); 
     }
 }
