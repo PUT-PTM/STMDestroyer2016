@@ -23,7 +23,7 @@ The current number of levels: 3.
 
 ### How to run 
 
-Game path: *.exe file in ".../Release" directory 
+Game path: *.exe file in "STMDestroyer2016\Destroyer 2016\Release" directory 
 Click on execute file, eventually change resolution or control settings and click on "Play!" button.
 
 Control:
@@ -46,13 +46,13 @@ STM as controller:
 2. Click on file and install programm <br>
 3. Run the programm after installation <br>
 4. Go to "Target" section and choose "Program" <br>
-5. You see new window. Look on "File path" and click "Browse" button to find  "stm32f429_project.hex" (end of path: "...\Release\STM Controller") <br>
+5. You see new window. Look on "File path" and click "Browse" button to find  "stm32f429_project.hex" (path: "STMDestroyer2016\Destroyer 2016\Release\STM Controller")
 6. Press "Start" button <br>
 7. Now STM32 is ready for use as gamepad
 
 ### Future improvements
 
-The explosion of the torpedo is under the water instead of on the ship. We are going to change it.
+The explosion of the torpedo is under the water instead of on the ship. We are going to change it. Adding leadeboard.
 
 ### Attributions
 
@@ -68,6 +68,9 @@ Bomb Exploding Sound: <a href='http://soundbible.com/1986-Bomb-Exploding.html'>l
 ### License
 
 License: MIT
+Audio:
+Bomb Exploding Sound: http://soundbible.com/1986-Bomb-Exploding.html
+license: https://creativecommons.org/licenses/by/3.0/pl/deed.en
 
 ### Credits
 
